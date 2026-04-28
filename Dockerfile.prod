@@ -1,0 +1,36 @@
+# ===============================
+# Stage 1: Build
+# ===============================
+FROM node:20-alpine AS build
+
+WORKDIR /app
+
+# Copy dependency files first for better layer caching
+COPY package.json package-lock.json* ./
+
+# Install ALL dependencies (devDependencies needed for build)
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# ===============================
+# Stage 2: Production runtime
+# ===============================
+FROM node:20-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+# Copy standalone output from Next.js
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/.next/static ./.next/static
+COPY --from=build /app/public ./public
+
+EXPOSE 4325
+
+CMD ["node", "server.js"]
