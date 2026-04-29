@@ -1,6 +1,6 @@
 export function NewsroomSidebar() {
   return (
-    <div className='px-5 hidden md:block py-10 border-r border-[var(--gp-border-soft)] fixed left-0 top-20 h-full w-[300px]'>
+    <div className='px-5 hidden md:block py-10 border-r border-[var(--gp-border-soft)] fixed left-0 top-17 h-full w-[300px]'>
       <h3
         className='ghost-news-title text-[15.2px] font-semibold text-[var(--gp-text)]'
         style={{ margin: '32px 0px 22px', lineHeight: '19.7995px' }}

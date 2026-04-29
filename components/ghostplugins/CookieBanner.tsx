@@ -5,6 +5,7 @@ import * as React from "react";
 export function CookieBanner() {
   const [open, setOpen] = React.useState(true);
   if (!open) return null;
+  return null;
 
   return (
     <div className="pointer-events-none fixed bottom-6 left-6 z-50 w-[340px] max-w-[calc(100vw-48px)]">

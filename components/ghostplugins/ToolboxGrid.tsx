@@ -27,7 +27,7 @@ export function ToolboxGrid() {
               type="button"
               onClick={() => setActiveCategory((prev) => (prev === cat ? null : cat))}
               className={[
-                "archive-group-name-link inline-block cursor-pointer rounded-[50px] border border-[var(--gp-border-soft)] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
+                "archive-group-name-link inline-block cursor-pointer rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
                 "mr-[10px] mb-[10px] transition-colors",
                 active ? "active bg-[#f4f4f4] text-black" : "bg-transparent text-[var(--gp-text)]",
               ].join(" ")}

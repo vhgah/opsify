@@ -8,7 +8,7 @@ export function SiteFooter() {
           <GhostMark size={40} />
 
           <div className='flex flex-col gap-6'>
-            <div className='flex flex-col gap-4 text-[14.4px] font-semibold text-[var(--gp-text)] sm:flex-row sm:gap-8'>
+            <div className='grid grid-cols-2 gap-4 text-[14.4px] font-semibold text-[var(--gp-text)] sm:flex sm:gap-8'>
               <a href='/support'>Support</a>
               <a href='/refunds'>Refunds</a>
               <a href='/license'>License</a>
