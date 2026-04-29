@@ -35,28 +35,6 @@ export function TemplatesPage() {
                 quick design head start.
               </p>
 
-              <div className="mt-6 flex items-center gap-2">
-                <button
-                  type="button"
-                  className="rounded-[8px] bg-white px-[14px] py-[8px] text-[13.6px] font-bold text-[#111] shadow-[inset_0_0_0_1px_#111]"
-                >
-                  Paper™
-                </button>
-                <button
-                  type="button"
-                  className="rounded-[8px] bg-white px-[14px] py-[8px] text-[11px] font-bold text-white"
-                  style={{ backgroundColor: "#111" }}
-                >
-                  POPULAR
-                </button>
-                <button
-                  type="button"
-                  className="rounded-[8px] bg-transparent px-[14px] py-[8px] text-[13.6px] font-bold text-[#111]"
-                >
-                  Branded
-                </button>
-              </div>
-
               <div className="mt-6 flex flex-wrap items-center gap-5 text-[12.8px] font-semibold text-[var(--gp-text)]">
                 <span className="inline-flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-black" />

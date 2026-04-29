@@ -133,7 +133,7 @@ const templates: TemplateCard[] = [
 export function TemplatesGrid() {
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-3 gap-x-10 gap-y-14 md:grid-cols-2 md:gap-x-8 md:gap-y-10 sm:grid-cols-1 sm:gap-y-6">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10 sm:gap-y-6">
         {templates.map((t) => (
           <a key={t.name} href={t.href} className="group block">
             <div className="relative overflow-hidden rounded-[10px] border border-[var(--gp-border-soft)] bg-white">
