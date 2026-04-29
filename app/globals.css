@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../CLAUDE.md";
 
 :root {
   --gp-text: #333333;
