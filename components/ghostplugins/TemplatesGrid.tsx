@@ -41,90 +41,105 @@ const templates: TemplateCard[] = [
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/noon_paper-e19175dead.png",
+    hoverImageSrc: "/ghostplugins.com/assets/noon_branded-8ae359612c.png",
   },
   {
     name: "Bench Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/bench_paper-f9a1d5b9dd.png",
+    hoverImageSrc: "/ghostplugins.com/assets/bench_branded-4c4c1758b6.png",
   },
   {
     name: "Monday Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/monday_paper-e494bad676.png",
+    hoverImageSrc: "/ghostplugins.com/assets/monday_branded-79ccf32b85.png",
   },
   {
     name: "Blink Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/blink_paper-4bb5aa03c7.png",
+    hoverImageSrc: "/ghostplugins.com/assets/blink_branded-96eca08476.png",
   },
   {
     name: "Mayke Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/mayke_paper-34179fc76c.png",
+    hoverImageSrc: "/ghostplugins.com/assets/mayke_branded_dark-28940d6aa2.png",
   },
   {
     name: "Wallet Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/wallet_paper-3ea43f6227.png",
+    hoverImageSrc: "/ghostplugins.com/assets/wallet_branded-42aeebfa01.png",
   },
   {
     name: "Luna Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/luna_paper-bec7a19d5b.png",
+    hoverImageSrc: "/ghostplugins.com/assets/luna_dark-04b3025236.png",
   },
   {
     name: "Clay Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/clay_paper-e0ea532ce1.png",
+    hoverImageSrc: "/ghostplugins.com/assets/clay_branded-8748e6219f.png",
   },
   {
     name: "Plate Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/plate_paper-63bb180249.png",
+    hoverImageSrc: "/ghostplugins.com/assets/plate_branded-05c8c9f209.png",
   },
   {
     name: "Trenton Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/trenton_paper-b61e0c5a36.png",
+    hoverImageSrc: "/ghostplugins.com/assets/trenton_branded-862009e95b.png",
   },
   {
     name: "Huello Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/huello_paper-7c08ca2ffe.png",
+    hoverImageSrc: "/ghostplugins.com/assets/huello_branded-68339bc034.png",
   },
   {
     name: "Kelso Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/kelso_paper-cfc64a06ee.png",
+    hoverImageSrc: "/ghostplugins.com/assets/kelso_branded-46e209c49b.png",
   },
   {
     name: "Tilt Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/tilt_paper-9419bb99c6.png",
+    hoverImageSrc: "/ghostplugins.com/assets/tilt_branded-511484a4d1.png",
   },
   {
     name: "Birch Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/birch_paper-f1e3220934.png",
+    hoverImageSrc: "/ghostplugins.com/assets/birch_branded-0edac0e4b0.png",
   },
   {
     name: "Miso Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/miso_paper-2973e5de91.png",
+    hoverImageSrc: "/ghostplugins.com/assets/miso_branded-4b6ea94095.png",
   },
   {
     name: "Classic Template",
@@ -152,7 +167,7 @@ export function TemplatesGrid() {
                 alt={t.name}
                 width={750}
                 height={805}
-                className={`h-auto w-full object-cover ${t.hoverImageSrc ? "group-hover:opacity-0 group-hover:hidden" : ""}`}
+                className={`h-auto w-full object-cover ${t.hoverImageSrc ? "group-hover:hidden" : ""}`}
               />
               {
                 t.hoverImageSrc ? (
@@ -161,7 +176,7 @@ export function TemplatesGrid() {
                     alt={t.name}
                     width={750}
                     height={805}
-                    className="h-auto w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="h-auto w-full object-cover hidden group-hover:block"
                   />
                 ) : null
               }
