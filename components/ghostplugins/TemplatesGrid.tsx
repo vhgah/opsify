@@ -6,6 +6,7 @@ type TemplateCard = {
   price: string;
   sale?: { salePrice: string; originalPrice: string };
   imageSrc: string;
+  hoverImageSrc?: string;
   badge?: "sale";
 };
 
@@ -17,6 +18,7 @@ const templates: TemplateCard[] = [
     sale: { salePrice: "$79.00", originalPrice: "$99.00" },
     badge: "sale",
     imageSrc: "/ghostplugins.com/assets/better_paper-868a98cd6f.png",
+    hoverImageSrc: "/ghostplugins.com/assets/better_branded_dark-9e2e64ab29.png",
   },
   {
     name: "Swell Template",
@@ -25,12 +27,14 @@ const templates: TemplateCard[] = [
     sale: { salePrice: "$79.00", originalPrice: "$99.00" },
     badge: "sale",
     imageSrc: "/ghostplugins.com/assets/upfront_paper-7e240fc0a5.png",
+    hoverImageSrc: "/ghostplugins.com/assets/upfront_branded-3d710061ef.png",
   },
   {
     name: "Hurdle Template",
     href: "/templates",
     price: "$99.00",
     imageSrc: "/ghostplugins.com/assets/hurdle_no_logo_paper-6d2360d1a3.png",
+    hoverImageSrc: "/ghostplugins.com/assets/hurdle_no_logo-9ddb960c6e.png",
   },
   {
     name: "Noon Template",
@@ -138,17 +142,29 @@ export function TemplatesGrid() {
           <a key={t.name} href={t.href} className="group block">
             <div className="relative overflow-hidden rounded-[10px] border border-[var(--gp-border-soft)] bg-white">
               {t.badge === "sale" ? (
-                <div className="absolute right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-[11px] font-semibold text-white">
+                <div className="absolute z-10 right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-[11px] font-semibold text-white">
                   SALE
                 </div>
               ) : null}
+              
               <Image
                 src={t.imageSrc}
                 alt={t.name}
                 width={750}
                 height={805}
-                className="h-auto w-full object-cover"
+                className={`h-auto w-full object-cover ${t.hoverImageSrc ? "group-hover:opacity-0 group-hover:hidden" : ""}`}
               />
+              {
+                t.hoverImageSrc ? (
+                  <Image
+                    src={t.hoverImageSrc}
+                    alt={t.name}
+                    width={750}
+                    height={805}
+                    className="h-auto w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                ) : null
+              }
             </div>
 
             <div className="mt-3 text-[13.6px] font-semibold text-[var(--gp-text)]">
