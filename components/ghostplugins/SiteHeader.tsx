@@ -98,14 +98,11 @@ export function SiteHeader() {
           >
             Templates
           </a>
-          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/studio">
-            Studio
-          </a>
           <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/toolbox">
             Toolbox
           </a>
-          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/more-folder">
-            …
+          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/blogs">
+            Blog
           </a>
         </nav>
 

@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source not "../CLAUDE.md";
+@source not "../AGENTS.md";
 
 :root {
   --gp-text: #333333;
