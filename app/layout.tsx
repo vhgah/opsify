@@ -7,9 +7,9 @@ import { SiteFooter } from '@/components/ghostplugins/SiteFooter'
 import { CookieBanner } from '@/components/ghostplugins/CookieBanner'
 
 export const metadata: Metadata = {
-  title: 'Ghost Plugins - The Most Loved Toolkit For Squarespace',
+  title: 'Opsify - Guides & Tools for New Shopify, WooCommerce & Squarespace Sellers',
   description:
-    'From complimentary plugins, to premium plugins and installed-for-you templates, Ghost is a growing toolkit for Squarespace websites.',
+    'Opsify helps new e-commerce sellers set up and launch their store on Shopify, WooCommerce, or Squarespace, with step-by-step guides and a Squarespace plugin/template toolkit.',
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
 }
 

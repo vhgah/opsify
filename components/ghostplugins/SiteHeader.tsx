@@ -85,10 +85,17 @@ export function SiteHeader() {
       >
         <Link href="/" className="flex items-center gap-2 text-sm font-semibold">
           <GhostMark size={26} />
-          <span>Ghost Plugins</span>
+          <span>Opsify</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
+          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/blog">
+            Blog
+          </a>
+          <span className="h-4 w-px bg-[var(--gp-border)]" aria-hidden="true" />
+          <span className="text-xs font-semibold uppercase tracking-wide text-text-muted">
+            Squarespace Toolkit
+          </span>
           <a className="text-sm font-semibold text-[var(--gp-text)]" href="/plugins">
             Plugins
           </a>
@@ -100,9 +107,6 @@ export function SiteHeader() {
           </a>
           <a className="text-sm font-semibold text-[var(--gp-text)]" href="/toolbox">
             Toolbox
-          </a>
-          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/blogs">
-            Blog
           </a>
         </nav>
 

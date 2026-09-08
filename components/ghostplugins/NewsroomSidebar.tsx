@@ -9,24 +9,23 @@ export function NewsroomSidebar() {
 
       <div className='space-y-4'>
         <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
-          <div className='text-sm font-semibold'>Meet Ghost Plugins</div>
+          <div className='text-sm font-semibold'>Meet Opsify</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
-            Since 2018, Ghost has been the most loved toolkit for Squarespace.
+            Guides and tools to help new sellers launch on Shopify, WooCommerce, and Squarespace.
           </div>
         </div>
 
         <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
-          <div className='text-sm font-semibold'>Go Pro</div>
+          <div className='text-sm font-semibold'>Squarespace Toolkit: Go Pro</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
             Get unlimited Super Plugins and Templates with Ghost+ Pro Access.
           </div>
         </div>
 
         <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
-          <div className='text-sm font-semibold'>Library Updates</div>
+          <div className='text-sm font-semibold'>New on the Blog</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
-            We&apos;re updating the plugin and template libraries with new
-            drops.
+            Fresh store-setup guides land regularly across all three platforms.
           </div>
         </div>
       </div>
