@@ -10,7 +10,11 @@ export const metadata: Metadata = {
   title: 'Opsify - Guides & Tools for New Shopify, WooCommerce & Squarespace Sellers',
   description:
     'Opsify helps new e-commerce sellers set up and launch their store on Shopify, WooCommerce, or Squarespace, with step-by-step guides and a Squarespace plugin/template toolkit.',
-  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  icons: [
+    { rel: 'icon', url: '/favicon.ico' },
+    { rel: 'icon', url: '/icon.png', type: 'image/png', sizes: '192x192' },
+    { rel: 'apple-touch-icon', url: '/apple-icon.png', sizes: '180x180' },
+  ],
 }
 
 export default function RootLayout({
