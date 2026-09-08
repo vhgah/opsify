@@ -1,4 +1,5 @@
 import type { Post } from './blog'
+import { getPostOgImage } from './blog'
 
 const SITE_URL = 'https://opsify.art'
 const SITE_NAME = 'Opsify'
@@ -71,8 +72,8 @@ export function buildJsonLd(post: Post): Record<string, unknown> {
     dateModified: post.modDatetime ?? post.pubDatetime,
     mainEntityOfPage: url,
     url,
+    image: getPostOgImage(post),
   }
-  if (post.ogImage) base.image = post.ogImage
 
   if (post.schemaType === 'HowTo') {
     const steps = extractHowToSteps(post.content)

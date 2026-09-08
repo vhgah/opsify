@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Guides for new sellers setting up their first store on Shopify, WooCommerce, and Squarespace.',
+  alternates: { canonical: '/blog' },
 }
 
 const PLATFORMS: Array<{ id: Platform | 'all'; label: string }> = [

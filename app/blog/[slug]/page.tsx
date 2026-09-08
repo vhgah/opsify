@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { marked } from 'marked'
 import type { Metadata } from 'next'
 
-import { getAllSlugs, getPostBySlug, slugifyTag } from '@/lib/blog'
+import { getAllSlugs, getPostBySlug, getPostOgImage, getRelatedPosts, slugifyTag } from '@/lib/blog'
 import { buildJsonLd } from '@/lib/postSchema'
+import { RelatedPosts } from '@/components/ghostplugins/RelatedPosts'
 
 const SITE_URL = 'https://opsify.art'
 
@@ -22,6 +23,7 @@ export async function generateMetadata({
   if (!post) return {}
 
   const url = post.canonicalURL || `${SITE_URL}/blog/${post.slug}`
+  const image = getPostOgImage(post)
 
   return {
     title: post.title,
@@ -34,13 +36,13 @@ export async function generateMetadata({
       url,
       publishedTime: post.pubDatetime,
       modifiedTime: post.modDatetime ?? post.pubDatetime,
-      images: post.ogImage ? [post.ogImage] : undefined,
+      images: [image],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: post.ogImage ? [post.ogImage] : undefined,
+      images: [image],
     },
   }
 }
@@ -56,12 +58,27 @@ export default async function BlogPostPage({
 
   const htmlContent = await marked(post.content)
   const jsonLd = buildJsonLd(post)
+  const relatedPosts = getRelatedPosts(post)
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+    ],
+  }
 
   return (
     <div className='mx-auto w-full max-w-[var(--size-copy)] px-6 py-10'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <nav className='mb-8'>
@@ -105,6 +122,8 @@ export default async function BlogPostPage({
           ))}
         </footer>
       )}
+
+      <RelatedPosts posts={relatedPosts} />
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { GhostMark } from "./GhostMark";
 
 export function HomeHero() {
@@ -20,18 +22,18 @@ export function HomeHero() {
         </p>
 
         <div className="mt-10 flex w-full max-w-[var(--size-hero-actions)] flex-col gap-3 sm:flex-row sm:gap-4">
-          <a
+          <Link
             href="/blog"
             className="block w-full rounded-md border border-[var(--gp-border)] bg-transparent px-5.5 py-4.5 text-center text-sm font-semibold text-[var(--gp-text)]"
           >
             Read the Guides
-          </a>
-          <a
+          </Link>
+          <Link
             href="/plugins"
             className="block w-full rounded-md bg-[var(--gp-text)] px-4.5 py-4.5 text-center text-sm font-semibold text-white"
           >
             Squarespace Toolkit
-          </a>
+          </Link>
         </div>
 
         <div className="mt-10 text-xs font-semibold text-[var(--gp-text)]">

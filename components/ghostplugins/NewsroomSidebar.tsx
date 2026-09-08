@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function NewsroomSidebar() {
   return (
     <div className='px-5 hidden md:block py-10 border-r border-[var(--gp-border-soft)] fixed left-0 top-17 h-full w-[var(--size-sidebar)]'>
@@ -8,26 +10,35 @@ export function NewsroomSidebar() {
       </h3>
 
       <div className='space-y-4'>
-        <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
+        <Link
+          href='/'
+          className='block rounded-lg border border-[var(--gp-border)] bg-white p-4 transition hover:border-brand'
+        >
           <div className='text-sm font-semibold'>Meet Opsify</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
             Guides and tools to help new sellers launch on Shopify, WooCommerce, and Squarespace.
           </div>
-        </div>
+        </Link>
 
-        <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
+        <Link
+          href='/plugins'
+          className='block rounded-lg border border-[var(--gp-border)] bg-white p-4 transition hover:border-brand'
+        >
           <div className='text-sm font-semibold'>Squarespace Toolkit: Go Pro</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
             Get unlimited Super Plugins and Templates with Ghost+ Pro Access.
           </div>
-        </div>
+        </Link>
 
-        <div className='rounded-lg border border-[var(--gp-border)] bg-white p-4'>
+        <Link
+          href='/blog'
+          className='block rounded-lg border border-[var(--gp-border)] bg-white p-4 transition hover:border-brand'
+        >
           <div className='text-sm font-semibold'>New on the Blog</div>
           <div className='mt-2 text-xs leading-normal text-text-muted'>
             Fresh store-setup guides land regularly across all three platforms.
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )

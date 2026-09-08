@@ -19,6 +19,7 @@ export async function generateMetadata({
   return {
     title: `#${entry.tag}`,
     description: `Posts tagged "${entry.tag}" — guides for new e-commerce sellers.`,
+    alternates: { canonical: `/blog/tags/${entry.slug}` },
   }
 }
 

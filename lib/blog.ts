@@ -3,6 +3,7 @@ import path from 'node:path'
 import matter from 'gray-matter'
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')
+const SITE_URL = 'https://opsify.art'
 
 export type Platform = 'shopify' | 'wix' | 'squarespace' | 'woocommerce'
 export type SchemaType = 'HowTo' | 'FAQPage' | 'Article'
@@ -93,6 +94,26 @@ export function slugifyTag(tag: string): string {
 
 export function getPostsByTag(tag: string): Post[] {
   return getAllPosts().filter((post) => post.tags.some((t) => slugifyTag(t) === tag))
+}
+
+export function getPostOgImage(post: Post): string {
+  return post.ogImage || `${SITE_URL}/blog/${post.slug}/opengraph-image`
+}
+
+export function getRelatedPosts(post: Post, limit = 3): Post[] {
+  const tagSet = new Set(post.tags.map((t) => slugifyTag(t)))
+
+  return getAllPosts()
+    .filter((candidate) => candidate.slug !== post.slug)
+    .map((candidate) => {
+      const sharedTags = candidate.tags.filter((t) => tagSet.has(slugifyTag(t))).length
+      const sharedPlatform = candidate.platform.some((p) => post.platform.includes(p)) ? 1 : 0
+      return { candidate, score: sharedTags * 2 + sharedPlatform }
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ candidate }) => candidate)
 }
 
 export function getAllTags(): { tag: string; slug: string; count: number }[] {

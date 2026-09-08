@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/plugins`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/templates`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/toolbox`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${SITE_URL}/support`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${SITE_URL}/feedback`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${SITE_URL}/refunds`, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${SITE_URL}/license`, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${SITE_URL}/terms-of-service`, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${SITE_URL}/privacy-policy`, changeFrequency: 'yearly', priority: 0.2 },
   ]
 
   const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({

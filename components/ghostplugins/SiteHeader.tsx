@@ -89,9 +89,9 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/blog">
+          <Link className="text-sm font-semibold text-[var(--gp-text)]" href="/blog">
             Blog
-          </a>
+          </Link>
           <span className="h-4 w-px bg-[var(--gp-border)]" aria-hidden="true" />
           <span className="text-xs font-semibold uppercase tracking-wide text-text-muted">
             Squarespace Toolkit
