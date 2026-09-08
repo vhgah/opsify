@@ -83,25 +83,25 @@ export function SiteHeader() {
       <div
         className="mx-auto flex w-full items-center gap-6 px-4 py-3"
       >
-        <Link href="/" className="flex items-center gap-2 text-[14.4px] font-semibold">
+        <Link href="/" className="flex items-center gap-2 text-sm font-semibold">
           <GhostMark size={26} />
           <span>Ghost Plugins</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/plugins">
+          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/plugins">
             Plugins
           </a>
           <a
-            className="text-[14.4px] font-semibold text-[var(--gp-text)]"
+            className="text-sm font-semibold text-[var(--gp-text)]"
             href="/templates"
           >
             Templates
           </a>
-          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/toolbox">
+          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/toolbox">
             Toolbox
           </a>
-          <a className="text-[14.4px] font-semibold text-[var(--gp-text)]" href="/blogs">
+          <a className="text-sm font-semibold text-[var(--gp-text)]" href="/blogs">
             Blog
           </a>
         </nav>
@@ -109,19 +109,19 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-4">
           <a
             href="/search"
-            className="hidden items-center gap-2 text-[14.4px] font-semibold text-[var(--gp-text)] md:flex"
+            className="hidden items-center gap-2 text-sm font-semibold text-[var(--gp-text)] md:flex"
           >
             <IconSearch />
           </a>
           <a
             href="#"
-            className="hidden text-[14.4px] font-semibold text-[var(--gp-text)] md:block"
+            className="hidden text-sm font-semibold text-[var(--gp-text)] md:block"
           >
             Login
           </a>
           <a
             href="/cart"
-            className="flex items-center gap-2 text-[14.4px] font-semibold text-[var(--gp-text)]"
+            className="flex items-center gap-2 text-sm font-semibold text-[var(--gp-text)]"
           >
             <IconCart />
             <span className="md:hidden">0</span>
@@ -129,7 +129,7 @@ export function SiteHeader() {
 
           <a
             href="/pro-access"
-            className="hidden rounded-[6.4px] border border-[var(--gp-border)] bg-white px-[17px] py-[10px] text-[14.4px] font-semibold text-[var(--gp-text)] md:block"
+            className="hidden rounded-md border border-[var(--gp-border)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--gp-text)] md:block"
           >
             Unlock Pro Access 👻
           </a>

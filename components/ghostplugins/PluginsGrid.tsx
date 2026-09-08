@@ -12,9 +12,9 @@ function PluginCard({ item }: { item: GhostPluginItem }) {
 
   return (
     <a href={item.href} className="block">
-      <div className="relative mb-[15px] w-full overflow-hidden rounded-[8px] bg-[#f6f6f6]">
+      <div className="relative mb-4 w-full overflow-hidden rounded-lg bg-surface-subtle">
         {isSale ? (
-          <div className="absolute right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-[11px] font-semibold text-white">
+          <div className="absolute right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-xs font-semibold text-white">
             SALE
           </div>
         ) : null}
@@ -22,23 +22,23 @@ function PluginCard({ item }: { item: GhostPluginItem }) {
         <img src={item.imageSrc} alt={item.title} className="h-auto w-full object-cover" loading="lazy" />
       </div>
 
-      <div className="summary-title mb-2 text-[13.6px] font-bold leading-[16.32px] text-[var(--gp-text)]">
+      <div className="summary-title mb-2 text-sm font-bold leading-4 text-[var(--gp-text)]">
         {item.title}
       </div>
 
       {item.categories.length > 0 ? (
-        <div className="inline-block text-[13px] font-normal text-[var(--gp-text)]">
+        <div className="inline-block text-xs font-normal text-[var(--gp-text)]">
           {item.categories.join(", ")}
         </div>
       ) : null}
 
       {item.price ? (
-        <div className="mt-1 text-[12.8px] leading-[18px] text-[var(--gp-text)]">
+        <div className="mt-1 text-xs leading-normal text-[var(--gp-text)]">
           {isSale ? (
             <>
               <span className="font-semibold">Sale Price:</span> {item.salePrice}{" "}
-              <span className="text-[#777]">Original Price:</span>{" "}
-              <span className="text-[#777]">{item.originalPrice}</span>
+              <span className="text-text-secondary">Original Price:</span>{" "}
+              <span className="text-text-secondary">{item.originalPrice}</span>
             </>
           ) : (
             item.price
@@ -69,14 +69,14 @@ export function PluginsGrid({ items }: { items: GhostPluginItem[] }) {
 
   return (
     <div className="mt-6">
-      <div className="archive-group-list -ml-[5px]">
+      <div className="archive-group-list -ml-1">
         <button
           type="button"
           onClick={() => setActiveCategory(null)}
           className={[
-            "archive-group-name-link inline-block cursor-pointer rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
-            "mr-[10px] mb-[10px] transition-colors",
-            activeCategory === null ? "active bg-[#f4f4f4] text-black" : "bg-transparent text-[var(--gp-text)]",
+            "archive-group-name-link inline-block cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold leading-5",
+            "mr-2.5 mb-2.5 transition-colors",
+            activeCategory === null ? "active bg-surface-muted text-black" : "bg-transparent text-[var(--gp-text)]",
           ].join(" ")}
         >
           All
@@ -90,9 +90,9 @@ export function PluginsGrid({ items }: { items: GhostPluginItem[] }) {
               type="button"
               onClick={() => setActiveCategory((prev) => (prev === cat ? null : cat))}
               className={[
-                "archive-group-name-link inline-block cursor-pointer rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
-                "mr-[10px] mb-[10px] transition-colors",
-                active ? "active bg-[#f4f4f4] text-black" : "bg-transparent text-[var(--gp-text)]",
+                "archive-group-name-link inline-block cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold leading-5",
+                "mr-2.5 mb-2.5 transition-colors",
+                active ? "active bg-surface-muted text-black" : "bg-transparent text-[var(--gp-text)]",
               ].join(" ")}
             >
               {cat}
@@ -102,7 +102,7 @@ export function PluginsGrid({ items }: { items: GhostPluginItem[] }) {
       </div>
 
       <div className="summary-item-list-container sqs-gallery-container mt-6">
-        <div className="grid grid-cols-1 gap-x-[40px] gap-y-[40px] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((item) => (
             <PluginCard key={`${item.version}-${item.href}`} item={item} />
           ))}

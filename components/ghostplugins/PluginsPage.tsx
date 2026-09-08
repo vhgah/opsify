@@ -10,33 +10,33 @@ export function PluginsPage() {
   const items = version === "paper" ? SUPER_PLUGINS : FREE_PLUGINS;
 
   return (
-    <main className="flex flex-1 flex-col" style={{ paddingTop: "120.859px" }}>
+    <main className="flex flex-1 flex-col" style={{ paddingTop: "var(--size-header-offset)" }}>
       <div className="flex-1 px-6 py-12 lg:px-8">
-        <div className="mx-auto w-full max-w-[1100px]">
-          <div className="rounded-[4px] border border-[#3c7be1] bg-white px-4 py-3 text-center text-[14.4px] font-bold text-[#3c7be1]">
+        <div className="mx-auto w-full max-w-[var(--size-content)]">
+          <div className="rounded-sm border border-brand bg-white px-4 py-3 text-center text-sm font-bold text-brand">
             We are updating the plugin library. Check back often for new plugins
             releases.
           </div>
 
           <div className="mt-8 flex items-center justify-between">
-            <div className="text-[22.4px] font-semibold leading-[28.6541px] text-[var(--gp-text)]">
+            <div className="text-2xl font-semibold leading-7 text-[var(--gp-text)]">
               Plugin Library
             </div>
 
             <a
               href="/pro-access"
-              className="hidden rounded-[6.4px] border border-[var(--gp-border)] bg-white px-[17.28px] py-[14.4px] text-[14.4px] font-semibold text-[var(--gp-text)] md:block"
+              className="hidden rounded-md border border-[var(--gp-border)] bg-white px-4.5 py-3.5 text-sm font-semibold text-[var(--gp-text)] md:block"
             >
               Pro Member Access
             </a>
           </div>
 
-          <p className="mt-4 max-w-[680px] text-[14.4px] leading-[22.896px] text-[var(--gp-text)]">
+          <p className="mt-4 max-w-[var(--size-copy)] text-sm leading-relaxed text-[var(--gp-text)]">
             A growing library of complimentary and premium plugins for Squarespace –
             from simple design tweaks, to more advanced, customizable features.
           </p>
 
-          <div className="mt-6 text-[12.8px] font-semibold text-[var(--gp-text)]">
+          <div className="mt-6 text-xs font-semibold text-[var(--gp-text)]">
             <span className="font-bold">Archived Plugins:</span>{" "}
             <a
               href="/legacy-plugins"
@@ -52,10 +52,10 @@ export function PluginsPage() {
                 type="button"
                 data-version="paper"
                 className={[
-                  "ghost-toggle-btn inline-flex cursor-pointer items-center rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
-                  "mr-[10px] transition-colors",
+                  "ghost-toggle-btn inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-xs font-bold leading-5",
+                  "mr-2.5 transition-colors",
                   version === "paper"
-                    ? "active bg-[#f4f4f4] text-black"
+                    ? "active bg-surface-muted text-black"
                     : "bg-transparent text-[var(--gp-text)]",
                 ].join(" ")}
                 onClick={() => setVersion("paper")}
@@ -67,10 +67,10 @@ export function PluginsPage() {
                 type="button"
                 data-version="branded"
                 className={[
-                  "ghost-toggle-btn inline-flex cursor-pointer items-center rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
-                  "mr-[10px] transition-colors",
+                  "ghost-toggle-btn inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-xs font-bold leading-5",
+                  "mr-2.5 transition-colors",
                   version === "branded"
-                    ? "active bg-[#f4f4f4] text-black"
+                    ? "active bg-surface-muted text-black"
                     : "bg-transparent text-[var(--gp-text)]",
                 ].join(" ")}
                 onClick={() => setVersion("branded")}

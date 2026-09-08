@@ -8,9 +8,9 @@ export function CookieBanner() {
   return null;
 
   return (
-    <div className="pointer-events-none fixed bottom-6 left-6 z-50 w-[340px] max-w-[calc(100vw-48px)]">
-      <div className="pointer-events-auto rounded-[10px] border border-[var(--gp-border)] bg-white p-5 shadow-sm">
-        <div className="text-[12.8px] leading-[18px] text-[var(--gp-text)]">
+    <div className="pointer-events-none fixed bottom-6 left-6 z-50 w-[var(--size-banner-panel)] max-w-[calc(100vw-48px)]">
+      <div className="pointer-events-auto rounded-xl border border-[var(--gp-border)] bg-white p-5 shadow-sm">
+        <div className="text-xs leading-normal text-[var(--gp-text)]">
           We use cookies to create the best experience. By visiting, you must read
           and agree to our{" "}
           <a href="/terms-of-service" className="underline underline-offset-2">
@@ -30,14 +30,14 @@ export function CookieBanner() {
         <div className="mt-4 flex items-center gap-4">
           <button
             type="button"
-            className="rounded-[6px] border border-[var(--gp-border)] bg-white px-4 py-2 text-[12.8px] font-semibold"
+            className="rounded-md border border-[var(--gp-border)] bg-white px-4 py-2 text-xs font-semibold"
             onClick={() => setOpen(false)}
           >
             Accept
           </button>
           <button
             type="button"
-            className="px-2 py-2 text-[12.8px] font-semibold"
+            className="px-2 py-2 text-xs font-semibold"
             onClick={() => setOpen(false)}
           >
             Manage

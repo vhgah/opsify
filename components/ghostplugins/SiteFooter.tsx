@@ -3,20 +3,20 @@ import { GhostMark } from './GhostMark'
 export function SiteFooter() {
   return (
     <footer className='mt-auto border-t border-[var(--gp-border-soft)] bg-white'>
-      <div className='mx-auto flex max-w-[1440px] flex-col gap-8 px-10 py-5 lg:flex-row lg:items-start'>
+      <div className='mx-auto flex max-w-[var(--size-shell)] flex-col gap-8 px-10 py-5 lg:flex-row lg:items-start'>
         <div className='flex flex-col items-start gap-6'>
           <GhostMark size={40} />
 
           <div className='flex flex-col gap-6'>
-            <div className='grid grid-cols-2 gap-4 text-[14.4px] font-semibold text-[var(--gp-text)] sm:flex sm:gap-8'>
+            <div className='grid grid-cols-2 gap-4 text-sm font-semibold text-[var(--gp-text)] sm:flex sm:gap-8'>
               <a href='/support'>Support</a>
               <a href='/refunds'>Refunds</a>
               <a href='/license'>License</a>
               <a href='/feedback'>Feedback</a>
             </div>
 
-            <div className='text-[#777]'>
-              <span className='font-semibold text-[#777]'>Disclaimer: </span>{' '}
+            <div className='text-text-secondary'>
+              <span className='font-semibold text-text-secondary'>Disclaimer: </span>{' '}
               Our website and products may contain links that will take you away
               from Ghost Plugins and could be affiliate based. This means that
               we may earn a commission if you make a purchase on these
@@ -26,7 +26,7 @@ export function SiteFooter() {
               registered trademark and property of Squarespace, Inc.
             </div>
 
-            <div className='text-[12px] text-[#888]'>
+            <div className='text-xs text-text-faint'>
               © The Ghost Company, LLC &nbsp;|&nbsp;{' '}
               <a href='/terms-of-service'>Terms of Service</a> &nbsp;|&nbsp;{' '}
               <a href='/privacy-policy'>Privacy Policy</a>

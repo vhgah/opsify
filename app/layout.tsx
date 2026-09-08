@@ -29,7 +29,7 @@ export default function RootLayout({
 
           <main className='flex pt-20'>
             <NewsroomSidebar />
-            <div className='w-full md:pl-[300px]'>
+            <div className='w-full md:pl-[var(--size-sidebar)]'>
               {children}
               <SiteFooter />
             </div>

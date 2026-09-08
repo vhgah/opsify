@@ -155,9 +155,9 @@ export function TemplatesGrid() {
       <div className="grid grid-cols-1 gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10 sm:gap-y-6">
         {templates.map((t) => (
           <a key={t.name} href={t.href} className="group block">
-            <div className="relative overflow-hidden rounded-[10px] border border-[var(--gp-border-soft)] bg-white">
+            <div className="relative overflow-hidden rounded-xl border border-[var(--gp-border-soft)] bg-white">
               {t.badge === "sale" ? (
-                <div className="absolute z-10 right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-[11px] font-semibold text-white">
+                <div className="absolute z-10 right-3 top-3 rounded-full bg-[var(--gp-text)] px-3 py-1 text-xs font-semibold text-white">
                   SALE
                 </div>
               ) : null}
@@ -182,18 +182,18 @@ export function TemplatesGrid() {
               }
             </div>
 
-            <div className="mt-3 text-[13.6px] font-semibold text-[var(--gp-text)]">
+            <div className="mt-3 text-sm font-semibold text-[var(--gp-text)]">
               {t.name}
             </div>
 
             {t.sale ? (
-              <div className="mt-1 text-[12.8px] leading-[18px] text-[var(--gp-text)]">
+              <div className="mt-1 text-xs leading-normal text-[var(--gp-text)]">
                 <span className="font-semibold">Sale Price:</span> {t.sale.salePrice}{" "}
-                <span className="text-[#777]">Original Price:</span>{" "}
-                <span className="text-[#777]">{t.sale.originalPrice}</span>
+                <span className="text-text-secondary">Original Price:</span>{" "}
+                <span className="text-text-secondary">{t.sale.originalPrice}</span>
               </div>
             ) : (
-              <div className="mt-1 text-[12.8px] leading-[18px] text-[var(--gp-text)]">
+              <div className="mt-1 text-xs leading-normal text-[var(--gp-text)]">
                 {t.price}
               </div>
             )}

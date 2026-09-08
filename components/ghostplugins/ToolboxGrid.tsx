@@ -18,7 +18,7 @@ export function ToolboxGrid() {
 
   return (
     <div className="mt-6">
-      <div className="archive-group-list -ml-[5px]">
+      <div className="archive-group-list -ml-1">
         {TOOLBOX_CATEGORIES.map((cat) => {
           const active = activeCategory === cat;
           return (
@@ -27,9 +27,9 @@ export function ToolboxGrid() {
               type="button"
               onClick={() => setActiveCategory((prev) => (prev === cat ? null : cat))}
               className={[
-                "archive-group-name-link inline-block cursor-pointer rounded-[50px] px-[10px] py-[6px] text-[12.8px] font-bold leading-[20.48px]",
-                "mr-[10px] mb-[10px] transition-colors",
-                active ? "active bg-[#f4f4f4] text-black" : "bg-transparent text-[var(--gp-text)]",
+                "archive-group-name-link inline-block cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold leading-5",
+                "mr-2.5 mb-2.5 transition-colors",
+                active ? "active bg-surface-muted text-black" : "bg-transparent text-[var(--gp-text)]",
               ].join(" ")}
             >
               {cat}
@@ -38,7 +38,7 @@ export function ToolboxGrid() {
         })}
       </div>
 
-      <div className="mt-6 grid grid-cols-1 gap-x-[40px] gap-y-[40px] sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item) => (
           <a
             key={item.href}
@@ -47,7 +47,7 @@ export function ToolboxGrid() {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="mb-[15px] w-full overflow-hidden rounded-[8px] bg-[#f6f6f6]">
+            <div className="mb-4 w-full overflow-hidden rounded-lg bg-surface-subtle">
               <Image
                 src={item.imageSrc}
                 alt={item.title}
@@ -57,10 +57,10 @@ export function ToolboxGrid() {
               />
             </div>
 
-            <div className="summary-title mb-2 text-[13.6px] font-bold leading-[16.32px] text-[var(--gp-text)]">
+            <div className="summary-title mb-2 text-sm font-bold leading-4 text-[var(--gp-text)]">
               {item.title}
             </div>
-            <div className="inline-block text-[13px] font-normal text-[var(--gp-text)]">
+            <div className="inline-block text-xs font-normal text-[var(--gp-text)]">
               {item.categories.join(", ")}
             </div>
           </a>

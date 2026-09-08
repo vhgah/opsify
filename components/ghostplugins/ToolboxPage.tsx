@@ -2,20 +2,20 @@ import { ToolboxGrid } from './ToolboxGrid'
 
 export function ToolboxPage() {
   return (
-    <main className='flex flex-1 flex-col' style={{ paddingTop: '120.859px' }}>
+    <main className='flex flex-1 flex-col' style={{ paddingTop: 'var(--size-header-offset)' }}>
       <div className='flex-1 px-6 py-12 lg:px-8'>
-        <div className='mx-auto w-full max-w-[1100px]'>
-          <div className='text-[22.4px] font-semibold leading-[28.6541px] text-[var(--gp-text)]'>
+        <div className='mx-auto w-full max-w-[var(--size-content)]'>
+          <div className='text-2xl font-semibold leading-7 text-[var(--gp-text)]'>
             Tools and Resources
           </div>
 
-          <p className='mt-4 max-w-[680px] text-[14.4px] leading-[22.896px] text-[var(--gp-text)]'>
+          <p className='mt-4 max-w-[var(--size-copy)] text-sm leading-relaxed text-[var(--gp-text)]'>
             We’ve gathered some of our favorites tools and resources that can
             help with your Squarespace website, design business, or goals for
             client projects.
           </p>
 
-          <p className='mt-4 max-w-[680px] text-[14.4px] leading-[22.896px] text-[var(--gp-text)]'>
+          <p className='mt-4 max-w-[var(--size-copy)] text-sm leading-relaxed text-[var(--gp-text)]'>
             <em>
               Some links may be affiliate based – but we only share what we
               love. 💙
